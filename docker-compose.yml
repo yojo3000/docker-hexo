@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  hexo:
+    container_name: hexo
+    image: yojo3000/hexo
+    restart: always
+    volumes:
+      - "/home/yojo3000/hexo_blog:/hexo_blog"
+    ports:
+      - "4000:4000"
+    working_dir: /hexo_blog
+    command: /bin/bash -c "source /root/.bashrc; hexo server"
+    #command: tail -f /etc/passwd
+
